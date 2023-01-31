@@ -16,12 +16,13 @@ const sendMail = async(options) => {
     from: process.env.EMAIL_USERNAME,
     to: options.email,
     subject: options.subject,
-    text: options.message
+    text: options.text,
+    html: options.message
 };
 
 transport.sendMail(mailDetails, function(err, data) {
     if(err) {
-        console.log('Error Occurs');
+        console.log('Error Occurred');
     } else {
         console.log('Email sent successfully');
     }
