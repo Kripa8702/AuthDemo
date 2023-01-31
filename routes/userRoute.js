@@ -123,7 +123,6 @@ router.post("/resetPassword", async (req, res) => {
     await User.updateOne(
       { userId: userId },
       { $set: { password: newPassword } },
-      { new: true }
     );
 
     const user = await User.findOne({ userId: userId });
